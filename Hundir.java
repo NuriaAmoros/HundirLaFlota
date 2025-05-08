@@ -77,10 +77,26 @@ public class Hundir {
             
             //Pedir las coordenadas
             //COORDENADA X
-            coordenadaX = pedirCoordenada(scanner, "fila", jugadorActual);
-            coordenadaY = pedirCoordenada(scanner, "columna", jugadorActual);
+            System.out.println("Jugador " + jugadorActual + ", introduce el número de fila: ");
+            String inputFila = scanner.nextLine();//""
 
+            if (inputFila.equals("abandono")) {
+                System.out.println("Gracias por jugar. ¡Hasta la próxima!");
+                break;
+            }
 
+            coordenadaX = Integer.parseInt(inputFila);
+
+            System.out.println("Jugador " + jugadorActual + ", introduce el número de columna: ");
+            String inputColumna = scanner.nextLine();
+
+            if (inputColumna.equals("abandono")) {
+                System.out.println("Gracias por jugar. ¡Hasta la próxima!");
+                break;
+            }
+
+            coordenadaY = Integer.parseInt(inputColumna);
+            
             //Validar que el usuario no ingrese coordenadas que no existen
             if(coordenadaX < 0 || coordenadaX >= tableroOponente.length  || coordenadaY < 0 || coordenadaY >= tableroOponente[0].length){
                 System.out.println("Coordenadas fuera del rango");
@@ -129,16 +145,7 @@ public class Hundir {
 //            }
         }
     }
-
-    public static int pedirCoordenada(Scanner scanner, String tipo, int jugador) {
-        System.out.println("Jugador " + jugador + ", introduce el número de " + tipo + ": ");
-        String input = scanner.nextLine();
-        if (input.equalsIgnoreCase("abandono")) {
-            System.out.println("Gracias por jugar. ¡Hasta la próxima!");
-            System.exit(0);
-        }
-        return Integer.parseInt(input);
-    }
+    
     
     
     public static boolean hayBarcosTodavia(String[][] tableroOponente){
