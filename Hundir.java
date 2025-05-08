@@ -17,8 +17,9 @@ public class Hundir {
         };
         //
         Scanner scanner = new Scanner(System.in);
-        
-        boolean salir = false; //2 opciones true false
+
+        // Controla si el usuario ha elegido salir del juego
+        boolean salir = false;
         
         while (!salir) {
             System.out.println("==Bienvenido jugadores a Hundir la flota==");
@@ -26,7 +27,7 @@ public class Hundir {
             System.out.println("1. Empezar el juego");
             System.out.println("2. Salir");
 
-            String opcionStr = scanner.nextLine();  // Leer como cadena
+            String opcionStr = scanner.nextLine();
             int opcion;
             opcion = Integer.parseInt(opcionStr);
 //            try {
@@ -37,7 +38,7 @@ public class Hundir {
 //            }
 
             if (opcion == 1) {
-                // Ejecuta el juego
+
                 ejecucionDelJuego(scanner, tableroJugador1, tableroJugador2);
             } else if (opcion == 2) {
                 salir = true;
@@ -49,14 +50,13 @@ public class Hundir {
     }
     
     public static void ejecucionDelJuego(Scanner scanner, String[][] tableroJugador1, String[][] tableroJugador2) {
-        //1 barco 
-        int[] barcosJugador1 = {3,1};
-        int[] barcosJugador2 = {3,1};
+
+
 
         //Otro barco    PENDIENTE
-        //Fila coordena x    Columna coordenada y
+
         int coordenadaX, coordenadaY;
-        int jugadorActual = 1; //2 jugadores  POR TURNOS
+        int jugadorActual = 1;
         boolean salir = false;
         
         while (!salir) {
@@ -136,13 +136,7 @@ public class Hundir {
             //Cambiar el jugador al final del while CUANDO TERMINA EL TURNO
             jugadorActual = (jugadorActual == 1) ? 2 : 1;
             
-            //El if es lo mismo que el renglon de arriba
-                    
-//            if(jugadorActual == 1){
-//                jugadorActual = 2;
-//            }else {
-//                jugadorActual = 1;
-//            }
+
         }
     }
     
