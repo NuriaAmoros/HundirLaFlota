@@ -20,16 +20,41 @@ public class Hundir {
         boolean salirDelJuego = false;
 
         while (!salirDelJuego) {
+
+        //
+        Scanner scanner = new Scanner(System.in);
+
+        // Controla si el usuario ha elegido salir del juego
+        boolean salir = false;
+        
+        while (!salir) {
+ main
             System.out.println("==Bienvenido jugadores a Hundir la flota==");
             System.out.println("Selecciona una opcion del menú para jugar");
             System.out.println("1. Empezar el juego");
             System.out.println("2. Salir");
+
 
             String opcionLeida = entrada.nextLine();
             int opcion = Integer.parseInt(opcionLeida);
 
             if (opcion == 1) {
                 ejecutarJuego(entrada, tableroJ1, tableroJ2);
+
+            String opcionStr = scanner.nextLine();
+            int opcion;
+            opcion = Integer.parseInt(opcionStr);
+//            try {
+//                opcion = Integer.parseInt(opcionStr);
+//            } catch (NumberFormatException e) {
+//                System.out.println("Por favor ingrese un número válido (1 o 2).");
+//                continue;  // Reinicia el menú si la entrada es inválida
+//            }
+
+            if (opcion == 1) {
+
+                ejecucionDelJuego(scanner, tableroJugador1, tableroJugador2);
+main
             } else if (opcion == 2) {
                 salirDelJuego = true;
             } else {
@@ -38,6 +63,7 @@ public class Hundir {
         }
     }
 
+
     public static void ejecutarJuego(Scanner entrada, String[][] tableroJ1, String[][] tableroJ2) {
         int fila, columna;
         int jugador = 1;
@@ -45,6 +71,21 @@ public class Hundir {
 
         while (!finDePartida) {
             System.out.println("==TURNO DEL JUGADOR " + jugador + " ==");
+
+    
+    public static void ejecucionDelJuego(Scanner scanner, String[][] tableroJugador1, String[][] tableroJugador2) {
+
+
+
+        //Otro barco    PENDIENTE
+
+        int coordenadaX, coordenadaY;
+        int jugadorActual = 1;
+        boolean salir = false;
+        
+        while (!salir) {
+            System.out.println("==TURNO DEL JUGADOR " + jugadorActual + " ==");
+main
             System.out.println("Si escribe 'abandono' termina el juego");
 
             String[][] tableroRival = (jugador == 1) ? tableroJ2 : tableroJ1;
@@ -101,7 +142,18 @@ public class Hundir {
                 System.out.println("Ya disparaste aquí. Intenta otra coordenada");
             }
 
+
             jugador = (jugador == 1) ? 2 : 1;
+
+            
+            
+            
+            
+            //Cambiar el jugador al final del while CUANDO TERMINA EL TURNO
+            jugadorActual = (jugadorActual == 1) ? 2 : 1;
+            
+
+ main
         }
     }
 
