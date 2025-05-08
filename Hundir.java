@@ -30,12 +30,7 @@ public class Hundir {
             String opcionStr = scanner.nextLine();
             int opcion;
             opcion = Integer.parseInt(opcionStr);
-//            try {
-//                opcion = Integer.parseInt(opcionStr);
-//            } catch (NumberFormatException e) {
-//                System.out.println("Por favor ingrese un número válido (1 o 2).");
-//                continue;  // Reinicia el menú si la entrada es inválida
-//            }
+
 
             if (opcion == 1) {
 
@@ -53,7 +48,7 @@ public class Hundir {
 
 
 
-        //Otro barco    PENDIENTE
+
 
         int coordenadaX, coordenadaY;
         int jugadorActual = 1;
